@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>FORM</title>
+</head>
+<body>
+    <div class="container">
+    <h1>FORM</h1>
+    <form onsubmit="">
+        <div class="input-box">
+            <span class="detail">First Name</span>
+        <input type="text" id="firstname" class="text" placeholder="user firstname" required></div>
+        <div class="input-box">
+            <span class="detail">Last Name</span>
+        <input type="text" id="lastname" class="text" placeholder="user lastname" required></div>
+        <div class="input-box">
+            <span class="detail">Age</span>
+        <input type="number" id="age" class="number" placeholder="user age" required></div>
+        <div class="input-box">
+                <span class="detail">Roll Number</span>
+            <input type="number" id="rollno" class="number" placeholder="user roll number" required></div>
+            <div class="input-box">
+            <span class="detail">Date OF Birth</span>
+        <input type="date" id="date" class="date" placeholder="user DOB" required></div>
+        <div class="input-box">
+            <span class="detail">Department</span>
+        <select name="department"  id="department"> 
+            <option value="select">select </option> 
+            <option value="computer science">computer</option> 
+            <option value="ECE">ECE</option> 
+            <option value="civil engineer ">data science</option> 
+            <option value="mechanical engineer">mechanical</option>   
+        </select></div>
+
+        <div class="gender-detail">
+            <span class="gender-title">Gender</span>
+            <input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+
+        </div>
+        <div class="input-box">
+            <span class="detail">Please Enter Your Hobbies</span>
+        <input type="text" id="hobby" class="text" placeholder="your hobbies" required></div>
+        <div class="button">
+        <input type="submit"  onclick="test()"></div>
+        <div class="button">
+            <input type="button" id="btn" value="get details" ></div>
+    </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script type = "text/javascript" src="javasc.js"></script>
+</html>
