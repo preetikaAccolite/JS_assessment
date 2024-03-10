@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <title>FORM</title>
 </head>
 <body>
     <div class="container">
     <h1>FORM</h1>
-    <form onsubmit="">
+    <form id="studentForm"  onsubmit="createStudent(); return false;">
         <div class="input-box">
             <span class="detail">First Name</span>
         <input type="text" id="firstname" class="text" placeholder="user firstname" required></div>
@@ -38,20 +39,23 @@
 
         <div class="gender-detail">
             <span class="gender-title">Gender</span>
-            <input type="radio" name="gender" value="male"> Male
-<input type="radio" name="gender" value="female"> Female
+            <input type="radio" id="gender"   name="gender" value="male"> Male
+<input type="radio"  id="gender"  name="gender" value="female"> Female
 
         </div>
         <div class="input-box">
             <span class="detail">Please Enter Your Hobbies</span>
         <input type="text" id="hobby" class="text" placeholder="your hobbies" required></div>
         <div class="button">
-        <input type="submit"  onclick="test()"></div>
+        <input type="submit" id="submitbuttn" onclick="createStudent()"></div>
+        
         <div class="button">
-            <input type="button" id="btn" value="get details" ></div>
+            <input type="text" id="rollnoinput" placeholder="enter roll no.">
+            <input type="button" id="btn" value="get details" onclick="getStudentDetails()"></div>
     </form>
+    <div id="studentDetails"></div>
     </div>
+    <script type = "text/javascript" src="javasc.js"></script>  
 </body>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script type = "text/javascript" src="javasc.js"></script>
+
 </html>

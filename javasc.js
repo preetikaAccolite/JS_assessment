@@ -1,16 +1,22 @@
 
-const txt1=document.getElementById('firstname')
-const txt2=document.getElementById('lastname')
-const age=document.getElementById('age')
-const roll=document.getElementById('rollno')
-const dob=document.getElementById('date')
-const btn=document.getElementById('btn')
+// const txt1=document.getElementById('firstname')
+// const txt2=document.getElementById('lastname')
+// const age=document.getElementById('age')
+// const roll=document.getElementById('rollno')
+// const dob=document.getElementById('date')
+// const btn=document.getElementById('btn')
+// const txt1=$('#firstname').val();
+// const txt2=$('#lastname').val();
+// const age=$('#age').val();
+// const roll=$('rollno').val();
+// const dib=$('#date').val();
+// const btn=document.getElementById('btn')
 
-function fun(){
-    const details=[("The firstName is : "+txt1.value),("The lastName is : "+txt2.value), ("The Age is : "+age.value),("The Roll Number is : "+roll.value),("The Date of Birth is : "+date.value)]
-    alert(details.join("\n"));
-}
-btn.addEventListener('click',fun);
+// function fun(){
+//     const details=[("The firstName is : "+txt1),("The lastName is : "+txt2), ("The Age is : "+age),("The Roll Number is : "+roll),("The Date of Birth is : "+date)]
+//     alert(details.join("\n"));
+// }
+// btn.addEventListener('click',fun);
 // window.onload = function(){
 //     alert("document is loading")
 //     }
@@ -32,3 +38,52 @@ btn.addEventListener('click',fun);
 // $(function()){
 //     alert("hello this is jquery");
 // }
+let students = [];
+
+    function createStudent() {
+        const firstName = document.getElementById('firstname').value;
+        const lastName = document.getElementById('lastname').value;
+        const age = document.getElementById('age').value;
+        const rollNo = document.getElementById('rollno').value;
+        const dob = document.getElementById('date').value;
+        const hobbies = document.getElementById('hobby').value.split(',').map(item => item.trim());
+        
+        const student = {
+            firstName: firstName,
+            lastName: lastName,
+            age: age,
+            rollNo: rollNo,
+            dob: dob,
+            hobbies: hobbies
+        };
+
+        students.push(student);
+        // alert(students[0]['rollNo'],JSON.stringify(students))
+    }
+
+    function getStudentDetails() {
+        const rollNo = document.getElementById('rollnoinput').value;
+        let student = null;
+        // alert(JSON.stringify(students))
+        for(let i=0;i<students.length;i++){
+            if (students[i]['rollNo'] ===rollNo){
+                student=students[i];
+                break;
+            }
+        }
+        // alert(JSON.stringify(student))
+
+        if (student) {
+            let studentInfo =` Student Details:\n\n`;
+        studentInfo += `First Name: ${student.firstName}\n`;
+        studentInfo += `Last Name: ${student.lastName}\n`;
+        studentInfo += `Age: ${student.age}\n`;
+        studentInfo += `Roll Number: ${student.rollNo}\n`;
+        studentInfo += `Date of Birth: ${student.dob}\n`;
+        studentInfo += `Hobbies: ${student.hobbies.join(', ')}\n`;
+
+        alert(studentInfo);
+    } else {
+        alert("Student not found!");
+    }
+    }
