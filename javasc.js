@@ -47,7 +47,26 @@ let students = [];
         const rollNo = document.getElementById('rollno').value;
         const dob = document.getElementById('date').value;
         const hobbies = document.getElementById('hobby').value.split(',').map(item => item.trim());
-        
+        if (firstName === "") {
+            document.getElementById('firstnameError').innerText = "First name is required";
+            return;
+        }
+        if (lastName === "") {
+            document.getElementById('lastnameError').innerText = "Last name is required";
+            return;
+        }
+        if (age === "" && age<0 && age>100) {
+            document.getElementById('ageError').innerText = "Age is required";
+            return;
+        }
+        if (rollNo === "") {
+            document.getElementById('rollnoError').innerText = "roll number is required";
+            return;
+        }
+        if (dob === "") {
+            document.getElementById('dateError').innerText = "date of birth is required";
+            return;
+        }
         const student = {
             firstName: firstName,
             lastName: lastName,
